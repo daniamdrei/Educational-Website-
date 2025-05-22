@@ -3,7 +3,7 @@
 						<div class="container-fluid d-flex align-items-stretch justify-content-between">
 							<!--begin::Header Menu Wrapper-->
 							<div class="header-menu-wrapper header-menu-wrapper-left" id="kt_header_menu_wrapper">
-								
+
 							</div>
 							<!--end::Header Menu Wrapper-->
 							<!--begin::Topbar-->
@@ -14,9 +14,9 @@
 									<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
 										<div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
                                             @if (app()->isLocale('en'))
-                                                <img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt="" />   
+                                                <img class="h-20px w-20px rounded-sm" src="{{ asset('panelAssets/media/svg/flags/226-united-states.svg') }}" alt="" />
                                             @else
-                                                <img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/008-saudi-arabia.svg" alt="" />
+                                                <img class="h-20px w-20px rounded-sm" src="{{ asset('panelAssets/media/svg/flags/008-saudi-arabia.svg') }}" alt="" />
                                             @endif
 											</div>
 									</div>
@@ -34,7 +34,7 @@
 											</li>
                                             @endforeach
 											<!--end::Item-->
-									
+
 										</ul>
 										<!--end::Nav-->
 									</div>
@@ -45,9 +45,9 @@
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">Sean</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ Auth::user()->name }}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
+											<span class="symbol-label font-size-h5 font-weight-bold">{{strtoupper( mb_substr( Auth::user()->name, 0, 1, 'UTF-8'))}}</span>
 										</span>
 									</div>
 								</div>
@@ -62,7 +62,7 @@
 		<div id="kt_quick_user" class="offcanvas offcanvas-right p-10">
 			<!--begin::Header-->
 			<div class="offcanvas-header d-flex align-items-center justify-content-between pb-5">
-				<h3 class="font-weight-bold m-0">User Profile
+				<h3 class="font-weight-bold m-0">@lang('vendors.profile')
 			</div>
 			<!--end::Header-->
 			<!--begin::Content-->
@@ -74,8 +74,7 @@
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">James Jones</a>
-						<div class="text-muted mt-1">Application Developer</div>
+						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::user()->name }}</a>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -92,10 +91,10 @@
 											<!--end::Svg Icon-->
 										</span>
 									</span>
-									<span class="navi-text text-muted text-hover-primary">jm@softplus.com</span>
+									<span class="navi-text text-muted text-hover-primary">{{ Auth::user()->email }}</span>
 								</span>
 							</a>
-							<a href="#" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
+							<a href="{{ route('panel.logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
 						</div>
 					</div>
 				</div>

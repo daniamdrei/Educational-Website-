@@ -1,0 +1,22 @@
+fieldset{
+    padding: 20px!important;
+    border: 1px solid #ebedf2!important;
+    margin-bottom: 50px
+}
+
+legend {
+    width: 0%;
+}
+
+legend label{
+    background: #FFF;
+    display: block
+}
+
+fieldset legend .kt-checkbox>span.first{
+    background: #FFF;
+    right: -27px;
+    top: -6px;
+}
+
+

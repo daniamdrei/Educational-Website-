@@ -3,7 +3,7 @@
 					<div class="brand flex-column-auto" id="kt_brand">
 						<!--begin::Logo-->
 						<a href="index.html" class="brand-logo">
-							<img alt="Logo" src="assets/media/logos/logo-light.png" />
+							<img alt="Logo" src="{{ asset('panelAssets/media/logos/logo-light.png') }}" />
 						</a>
 						<!--end::Logo-->
 						<!--begin::Toggle-->
@@ -42,11 +42,11 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">Dashboard</span>
+										<span class="menu-text">@lang('vendors.dashboard')</span>
 									</a>
 								</li>
 								<li class="menu-section">
-									<h4 class="menu-text">Category</h4>
+									<h4 class="menu-text">@lang('vendors.category')</h4>
 									<i class="menu-icon ki ki-bold-more-hor icon-md"></i>
 								</li>
 								<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -62,15 +62,15 @@
 											</svg>
 											<!--end::Svg Icon-->
 										</span>
-										<span class="menu-text">@lang('auth.admins')</span>
+										<span class="menu-text">@lang('panel.admins')</span>
 										<i class="menu-arrow"></i>
 									</a>
 									<div class="menu-submenu">
-									
+
 										<ul class="menu-subnav">
 											<li class="menu-item menu-item-parent" aria-haspopup="true">
 												<span class="menu-link">
-													<span class="menu-text">Admins</span>
+													<span class="menu-text"></span>
 												</span>
 											</li>
 											<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -78,7 +78,7 @@
 													<i class="menu-bullet menu-bullet-line">
 														<span></span>
 													</i>
-													<span class="menu-text">All</span>
+													<span class="menu-text">@lang('constants.all')</span>
 												</a>
 											</li>
 											<li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -86,15 +86,15 @@
 													<i class="menu-bullet menu-bullet-line">
 														<span></span>
 													</i>
-													<span class="menu-text">Add</span>
+													<span class="menu-text">@lang('constants.add')</span>
 												</a>
-				
+
 											</li>
-		
+
 										</ul>
 									</div>
 								</li>
-						
+
 							</ul>
 							<!--end::Menu Nav-->
 						</div>
