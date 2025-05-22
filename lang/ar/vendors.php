@@ -209,7 +209,7 @@ return [
     'iban' => 'الايبان',
     'order_count' => 'عدد الطلبات',
 
-    'order_number' => 'رقم الطلب',
+    // 'order_number' => 'رقم الطلب',
     'items_count' => 'عدد المنتجات',
     'delivery_type' => 'نوع التوصيل',
     'dayily_income'=>'المبيعات اليومية',

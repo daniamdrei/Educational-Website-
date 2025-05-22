@@ -61,6 +61,7 @@ return [
     'partners' => 'Partners',
     'events' => 'Events',
     'contact_us' => 'Contact us',
+    'created_at'=>'created at',
 
     'help_center' => 'Help center',
     'contact_messages' => 'Incoming contacts',

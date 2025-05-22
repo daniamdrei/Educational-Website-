@@ -45,9 +45,9 @@
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ Auth::user()->name }}</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('admin')->user()->name }}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">{{strtoupper( mb_substr( Auth::user()->name, 0, 1, 'UTF-8'))}}</span>
+											<span class="symbol-label font-size-h5 font-weight-bold">{{strtoupper( mb_substr( auth('admin')->user()->name, 0, 1, 'UTF-8'))}}</span>
 										</span>
 									</div>
 								</div>
@@ -74,7 +74,7 @@
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ Auth::user()->name }}</a>
+						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{auth('admin')->user()->name }}</a>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">

@@ -1,4 +1,4 @@
-@include('panel.layouts.master' , ['title' => __('auth.index')])
+@include('panel.layouts.master' , ['title' =>@__('vendors.dashboard')])
 
 @section('content')
 
