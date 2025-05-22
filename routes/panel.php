@@ -50,6 +50,7 @@ Route::group(
                 Route::get('/', [BlogController::class, 'index'])->name('index');
                 Route::get('/datatable', [BlogController::class, 'datatable'])->name('datatable');
 
+
                 Route::group(['prefix' => 'create'], function (){
                     Route::get('/',[BlogController::class , 'create'])->name('create');
                     Route::post('/',[BlogController::class , 'store'])->name('store');

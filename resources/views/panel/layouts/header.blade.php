@@ -16,7 +16,7 @@
                                             @if (app()->isLocale('en'))
                                                 <img class="h-20px w-20px rounded-sm" src="{{ asset('panelAssets/media/svg/flags/226-united-states.svg') }}" alt="" />
                                             @else
-                                                <img class="h-20px w-20px rounded-sm" src="{{ asset('panelAssets/media/svg/flags/008-saudi-arabia.svg') }}" alt="" />
+                                                <img class="h-20px w-20px rounded-sm" src="{{ asset('panelAssets/media/svg/flags/077-jordan.svg') }}" alt="" />
                                             @endif
 											</div>
 									</div>

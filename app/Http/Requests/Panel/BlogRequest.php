@@ -11,7 +11,7 @@ class BlogRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return auth('admin')->check();
     }
 
     /**
@@ -21,8 +21,23 @@ class BlogRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            //
-        ];
+        $rules = [];
+        foreach (locales() as $key=>$lang){
+            $rules['title_'.$key] = 'required|string|max:255';
+            $rules['content_'.$key] = 'required|string|max:255';
+        }
+
+        return  $rules;
+    }
+
+    public function attributes()
+    {
+        $attrs = [];
+        foreach (locales() as $key=>$lang){
+            $attrs['title_'.$key] = __('panel.title') . '('. $lang['name'] .')';
+            $attrs['content_'.$key] = __('panel.content') . '('. $lang['name'] .')';
+         }
+
+        return  $attrs;
     }
 }
