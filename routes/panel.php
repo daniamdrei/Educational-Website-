@@ -2,6 +2,7 @@
 
 
 use App\Http\Controllers\Panel\BlogController;
+use App\Http\Controllers\Panel\CoursesController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Panel\AdminController;
@@ -67,7 +68,7 @@ Route::group(
 
             // routes for faqs
 
-               Route::group(['prefix' => 'faqs' , 'as' => 'faqs.'], function () {
+            Route::group(['prefix' => 'faqs' , 'as' => 'faqs.'], function () {
 
                 Route::get('/', [FaqController::class, 'index'])->name('index');
                 Route::get('/datatable', [FaqController::class, 'datatable'])->name('datatable');
@@ -86,6 +87,29 @@ Route::group(
                 });
 
             });
+            // routes for courses
+
+            Route::group(['prefix' => 'courses' , 'as' => 'courses.'], function () {
+
+                Route::get('/', [CoursesController::class, 'index'])->name('index');
+                Route::get('/datatable', [CoursesController::class, 'datatable'])->name('datatable');
+
+
+                Route::group(['prefix' => 'create'], function (){
+                    Route::get('/',[CoursesController::class , 'create'])->name('create');
+                    Route::post('/',[CoursesController::class , 'store'])->name('store');
+                });
+
+                Route::group(['prefix' => '{id}'], function (){
+                    Route::get('/edit',[CoursesController::class , 'edit'])->name('edit');
+                    Route::put('/edit',[CoursesController::class , 'update'])->name('update');
+                    Route::delete('/',[CoursesController::class , 'destroy'])->name('destroy');
+                    Route::post('/operation',[CoursesController::class , 'operation'])->name('operation');
+                });
+
+            });
+
+
 
         });
 });

@@ -2,6 +2,9 @@
 
 return [
 
+    'courses'=>'الدروس',
+    "descriptions"=>'الوصف',
+    'instructor'=>'المدرس',
     'login_panel' => 'تسجيل الدخول إلى لوحة التحكم',
     'home' => 'الرئيسية',
     'overview' => 'نظرة عامة',

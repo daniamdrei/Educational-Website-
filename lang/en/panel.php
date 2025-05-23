@@ -1,6 +1,11 @@
-<?php
+courses<?php
 
 return [
+    'courses'=>'courses',
+    'description'=>'Description',
+    'instructor'=>'Instructor',
+    'category' => 'Category',
+    'title' => 'Title',
     'login_panel' => 'Login to control panel',
     'home' => 'Home',
     'overview' => 'Overview',
@@ -75,7 +80,7 @@ return [
     'bank_transfers' => 'Bank Transfers',
     'accepted_bank_transfers' => 'Accepted Bank Transfers',
     'rejected_bank_transfers' => 'Rejected Bank Transfers',
-    'category' => 'Category',
+
     'monthly_installment' => 'Monthly installment',
     'started_at' => 'Started at',
     'ended_at' => 'Ended at',
@@ -102,7 +107,7 @@ return [
     'password' => ' Password',
     'add' => 'Add',
     'vendors' => 'Vendors',
-    'title' => 'Title',
+
     'content' => 'Content',
     'articles' => 'Articles',
     'button_title' => 'Button title',
