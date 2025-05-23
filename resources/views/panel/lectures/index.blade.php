@@ -1,4 +1,4 @@
-@extends('panel.layouts.master' , ['title' => __('panel.courses')])
+@extends('panel.layouts.master' , ['title' => __('panel.lectures')])
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-xl-4 d-flex justify-content-end">
-                                <a href="{{ route('panel.courses.create') }}"
+                                <a href="{{ route('panel.courses.lectures.create' ,$course->id) }}"
                                    class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<i class="fa fa-plus"></i>
@@ -49,7 +49,7 @@
     <script src="{{ asset('panelAssets/js/data-ajax.js') }}"></script>
 
     <script>
-        window.data_url = '{{route('panel.courses.datatable')}}';
+        window.data_url = '{{route('panel.courses.lectures.datatable' , $course->id)}}';
         window.columns = [
             {
                 field: ' ',
@@ -67,8 +67,8 @@
                 textAlign: 'center',
             },
             {
-                field: 'lectures_count',
-                title: '@lang('panel.lectures')',
+                field: 'youtube',
+                title: '@lang('panel.youtube')',
                 selector: false,
                 textAlign: 'center',
             },
@@ -97,9 +97,7 @@
                 width: 120,
 
             }
-    
         ];
-
     </script>
 
 

@@ -3,6 +3,7 @@
 
 use App\Http\Controllers\Panel\BlogController;
 use App\Http\Controllers\Panel\CoursesController;
+use App\Http\Controllers\Panel\LectureController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Panel\AdminController;
@@ -105,11 +106,31 @@ Route::group(
                     Route::put('/edit',[CoursesController::class , 'update'])->name('update');
                     Route::delete('/',[CoursesController::class , 'destroy'])->name('destroy');
                     Route::post('/operation',[CoursesController::class , 'operation'])->name('operation');
-                });
+                    // routes for lectures
+                    Route::group(['prefix' => 'lectures' , 'as' => 'lectures.'], function () {
+
+                        Route::get('/', [LectureController::class, 'index'])->name('index');
+                        Route::get('/datatable', [LectureController::class, 'datatable'])->name('datatable');
+
+                        Route::group(['prefix' => 'create'], function (){
+
+                            Route::get('/',[LectureController::class , 'create'])->name('create');
+                            Route::post('/',[LectureController::class , 'store'])->name('store');
+                        });
+
+                        Route::group(['prefix' => '{l_id}'], function (){
+
+                            Route::get('/edit',[LectureController::class , 'edit'])->name('edit');
+                            Route::put('/edit',[LectureController::class , 'update'])->name('update');
+                            Route::delete('/',[LectureController::class , 'destroy'])->name('destroy');
+                            Route::post('/operation',[LectureController::class , 'operation'])->name('operation');
+                        });
 
             });
 
+                });
 
+            });
 
         });
 });

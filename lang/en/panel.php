@@ -5,6 +5,8 @@ return [
     'description'=>'Description',
     'instructor'=>'Instructor',
     'category' => 'Category',
+    'lectures'=>'Lectures',
+     'add_new_lecture'=>'add new lecture',
     'title' => 'Title',
     'login_panel' => 'Login to control panel',
     'home' => 'Home',

@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('lectures', function (Blueprint $table) {
             $table->id();
-            $table->boolean('is_active');
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->string('video_link');
+            $table->boolean('is_active')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });

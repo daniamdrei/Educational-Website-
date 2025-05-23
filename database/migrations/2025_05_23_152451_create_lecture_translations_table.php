@@ -14,16 +14,13 @@ return new class extends Migration
         Schema::create('lecture_translations', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('course_id');
+            $table->unsignedBigInteger('lecture_id');
             $table->string('locale')->index();
 
             $table->string('title');
-            $table->longText('description')->nullable();
-            $table->longText('instructor')->nullable();
-            $table->longText('category')->nullable();
-            $table->unique(['course_id', 'locale']);
-            $table->foreign('course_id')->references('id')->on('courses')->onDelete('cascade');
-      
+            $table->unique(['lecture_id', 'locale']);
+            $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
+
         });
     }
 

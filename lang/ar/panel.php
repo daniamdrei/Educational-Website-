@@ -5,6 +5,8 @@ return [
     'courses'=>'الدروس',
     "descriptions"=>'الوصف',
     'instructor'=>'المدرس',
+    'lectures'=>'المحاضرات',
+    'add_new_lecture'=>'اضافة محاضرة جديدة',
     'login_panel' => 'تسجيل الدخول إلى لوحة التحكم',
     'home' => 'الرئيسية',
     'overview' => 'نظرة عامة',
