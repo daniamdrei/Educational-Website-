@@ -5,7 +5,7 @@ use App\Http\Controllers\Panel\BlogController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Panel\AdminController;
-
+use App\Http\Controllers\Panel\FaqController;
 
 Route::group(
     [
@@ -61,6 +61,28 @@ Route::group(
                     Route::put('/edit',[BlogController::class , 'update'])->name('update');
                     Route::delete('/',[BlogController::class , 'destroy'])->name('destroy');
                     Route::post('/operation',[BlogController::class , 'operation'])->name('operation');
+                });
+
+            });
+
+            // routes for faqs
+
+               Route::group(['prefix' => 'faqs' , 'as' => 'faqs.'], function () {
+
+                Route::get('/', [FaqController::class, 'index'])->name('index');
+                Route::get('/datatable', [FaqController::class, 'datatable'])->name('datatable');
+
+
+                Route::group(['prefix' => 'create'], function (){
+                    Route::get('/',[FaqController::class , 'create'])->name('create');
+                    Route::post('/',[FaqController::class , 'store'])->name('store');
+                });
+
+                Route::group(['prefix' => '{id}'], function (){
+                    Route::get('/edit',[FaqController::class , 'edit'])->name('edit');
+                    Route::put('/edit',[FaqController::class , 'update'])->name('update');
+                    Route::delete('/',[FaqController::class , 'destroy'])->name('destroy');
+                    Route::post('/operation',[FaqController::class , 'operation'])->name('operation');
                 });
 
             });
