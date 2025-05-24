@@ -1,0 +1,102 @@
+.swiper:hover {
+    cursor: pointer;
+}
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0px 5px;
+}
+
+.sw-auto {
+    .swiper-slide {
+        width: auto;
+    }
+}
+
+.box-navigation {
+    display: flex;
+    gap: 20px;
+    .navigation {
+        width: 67px;
+        height: 67px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 999px;
+        @include transition3;
+        .icon {
+            color: $white;
+            font-size: 20px;
+        }
+        &.swiper-button-disabled,
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    }
+}
+
+.sw-pagination {
+    .swiper-pagination-bullet {
+        width: 8px;
+        height: 8px;
+        background-color: $outline;
+        opacity: 1;
+        position: relative;
+        @include transition5;
+
+        &::before {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            content: "";
+            width: 14px;
+            height: 14px;
+            border: 1px solid $primary;
+            overflow: visible;
+            opacity: 0;
+            @include transition3;
+        }
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $primary !important;
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &:not(.swiper-pagination-lock) {
+        margin-top: 15px;
+    }
+}
+
+.flat-slider-wrap {
+    position: relative;
+    .navigation {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+    }
+    .swiper-nav-next {
+        left: 5%;
+    }
+    .swiper-nav-prev {
+        right: 5%;
+    }
+}
+
+.swiper{
+    .flat-blog-item{
+        margin-bottom: 0;
+    }
+}
+// .tf-sw-mobile-1,
+// .tf-sw-mobile{
+//     .sec-btn{
+//         margin-top: 30px;
+//     }
+// }

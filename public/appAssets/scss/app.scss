@@ -1,0 +1,52 @@
+/* ---------------------------------------------------------
+    * Name: Homelengo
+    * Version: 1.0.1
+    * Author: Themesflat
+    * Author URI: http://themesflat.com 
+
+	* Abstracts variable
+    
+    * Reset css styles
+
+    * Components
+        * header
+        * footer
+        * tabs
+        * slider banner
+        * button
+        * range slider
+        * form
+        * nice select
+        * carousel
+        * avatar
+        * off canvas
+        * hover
+        * preloader
+
+    * section
+
+    * dashboard
+
+    * Responsive
+ ------------------------------------------------------------------------------ */
+
+/*--------- Abstracts variable ---------- */
+@import "./abstracts/index";
+
+/*---------- Reset css styles ----------- */
+@import "reset";
+
+/*------------ Components ---------------- */
+@import "./component/index";
+
+/*-------------- section ----------------- */
+@import "./section";
+
+/*--------------- dashboard ---------------- */
+@import "./dashboard";
+
+/*-------------- Responsive ----------------- */
+@import "./responsive";
+
+/*-------------- RTL ----------------- */
+@import "./rtl";
