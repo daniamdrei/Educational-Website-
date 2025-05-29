@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('lecture_translations', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->unsignedBigInteger('lecture_id');
             $table->string('locale')->index();
 
             $table->string('title');
+            $table->longText('description')->nullable();
+
             $table->unique(['lecture_id', 'locale']);
             $table->foreign('lecture_id')->references('id')->on('lectures')->onDelete('cascade');
-
         });
     }
 

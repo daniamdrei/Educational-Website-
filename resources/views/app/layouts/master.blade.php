@@ -10,12 +10,12 @@
    <!-- <a href="javascript:void(0);" id="toggle-rtl" class="tf-btn primary">RTL</a> -->
    <!-- /RTL  -->
    <!-- preload -->
-    {{-- <div class="preload preload-container">
+    <div class="preload preload-container">
         <div class="preload-logo">
             <div class="spinner"></div>
            <i class="bi bi-collection-play"></i>
         </div>
-    </div> --}}
+    </div>
     <!-- /preload -->
 
 

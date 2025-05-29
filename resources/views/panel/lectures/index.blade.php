@@ -23,7 +23,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-4 col-xl-4 d-flex justify-content-end">
-                                <a href="{{ route('panel.courses.lectures.create' ,$course->id) }}"
+                                <a href="{{ route('panel.courses.lectures.create' , $course->id) }}"
                                    class="btn btn-primary font-weight-bolder">
 											<span class="svg-icon svg-icon-md">
 												<i class="fa fa-plus"></i>
@@ -49,7 +49,7 @@
     <script src="{{ asset('panelAssets/js/data-ajax.js') }}"></script>
 
     <script>
-        window.data_url = '{{route('panel.courses.lectures.datatable' , $course->id)}}';
+        window.data_url = '{{route('panel.courses.lectures.datatable', $course->id)}}';
         window.columns = [
             {
                 field: ' ',
@@ -67,7 +67,7 @@
                 textAlign: 'center',
             },
             {
-                field: 'youtube',
+                field: 'link',
                 title: '@lang('panel.youtube')',
                 selector: false,
                 textAlign: 'center',
@@ -98,6 +98,7 @@
 
             }
         ];
+
     </script>
 
 

@@ -2,18 +2,16 @@
 
 namespace App\Models;
 
+use Astrotomic\Translatable\Translatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 
 class Lecture extends Model
 {
-     public $translatedModel = LectureTranslation::class;
-    public $translatedAttributes = ['title' ,'description'];
-    protected $fillable=[
-        'is_active',
-        'course_id',
-        'video_link'
-    ];
+    use  Translatable;
+    public $translationModel = LectureTranslation::class;
+    public $translatedAttributes = ['title', 'description'];
+    protected $fillable = ['is_active' , 'video_link' , 'course_id'];
 
     public function createTranslation(Request $request)
     {
@@ -34,8 +32,12 @@ class Lecture extends Model
         $query = $request->get('query', []);
 
         if (isset($query['generalSearch'])) {
-            $q->whereTranslationLike('title', 'like', '%' . $query['generalSearch'] . '%')
-            ->whereTranslationLike('description', 'like', '%' . $query['generalSearch'] . '%');
+            $q->whereTranslationLike('title', '%' . $query['generalSearch'] . '%')
+                ->orwhereTranslationLike('description',  '%' . $query['generalSearch'] . '%');
         }
+    }
+
+    public function course(){
+        return $this->belongsTo(Course::class);
     }
 }

@@ -18,7 +18,7 @@ class CoursesController extends Controller
 
     public function datatable()
     {
-        $items = Course::query()->latest()->filter();
+        $items = Course::query()->latest()->filter()->withCount('lectures');
         $resource = new CourseResource($items);
 
         return filterDataTable($items, $resource, request());

@@ -39,8 +39,8 @@ class LectureRequest extends FormRequest
             'video_link' => __('panel.youtube')
         ];
         foreach (locales() as $key=>$lang){
-            $attrs['title_'.$key] = __('panel.title') . '('. $lang .')';
-            $attrs['description_'.$key] = __('constants.description') . '('. $lang .')';
+            $attrs['title_'.$key] = __('panel.title') . '('. $lang['name'] .')';
+            $attrs['description_'.$key] = __('constants.description') . '('. $lang['name'] .')';
          }
 
         return  $attrs;
