@@ -4,6 +4,7 @@
 use App\Http\Controllers\Panel\BlogController;
 use App\Http\Controllers\Panel\CoursesController;
 use App\Http\Controllers\Panel\LectureController;
+use App\Http\Controllers\Panel\StudentController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Controllers\Panel\AdminController;
@@ -132,6 +133,27 @@ Route::group(
 
             });
 
+
+            // routes for student
+            Route::group(['prefix' => 'students' , 'as' => 'students.'], function () {
+
+                Route::get('/', [StudentController::class, 'index'])->name('index');
+                Route::get('/datatable', [StudentController::class, 'datatable'])->name('datatable');
+
+
+                Route::group(['prefix' => 'create'], function (){
+                    Route::get('/',[StudentController::class , 'create'])->name('create');
+                    Route::post('/',[StudentController::class , 'store'])->name('store');
+                });
+
+                Route::group(['prefix' => '{id}'], function (){
+                    Route::get('/edit',[StudentController::class , 'edit'])->name('edit');
+                    Route::put('/edit',[StudentController::class , 'update'])->name('update');
+                    Route::delete('/',[StudentController::class , 'destroy'])->name('destroy');
+                    Route::post('/operation',[StudentController::class , 'operation'])->name('operation');
+                });
+
+            });
         });
 });
 
