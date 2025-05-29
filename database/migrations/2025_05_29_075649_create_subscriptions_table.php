@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('subscriptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('course_id')->constrained('courses')->onDelete('cascade');
+            $table->foreignId('student_id')->constrained('students')->onDelete('cascade');
+            $table->date('start_data');
+            $table->date('end_data');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }

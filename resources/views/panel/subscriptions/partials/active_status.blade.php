@@ -2,7 +2,7 @@
 		<label>
 			<input type="checkbox"
                    {{$instance->is_active?'checked':''}}
-                   data-url="{{ route('panel.students.operation' , ['id'=>$instance->id]) }}"
+                   data-url="{{ route('panel.blogs.operation' , ['id'=>$instance->id]) }}"
                    class="operation">
 			<span></span>
 		</label>

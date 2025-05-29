@@ -29,4 +29,11 @@ class Student extends Model
     }
 
 
+    public function subscriptions(){
+        return $this->belongsToMany(Subscription::class);
+    }
+
+    public function courses(){
+        return $this->hasManyThrough(Course::class , Subscription::class);
+    }
 }

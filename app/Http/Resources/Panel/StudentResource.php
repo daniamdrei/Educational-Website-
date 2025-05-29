@@ -20,8 +20,8 @@ class StudentResource extends JsonResource
             'email' => $this['email'],
             'ssn_id' => $this['ssn_id'],
             'created_at' => Carbon::parse($this['created_at'])->format('Y-m-d'),
-            'active' => view('panel.faqs.partials.active_status' , ['instance' => $this])->render(),
-            'options' => view('panel.faqs.partials.options' , ['instance' => $this])->render()
+            'active' => view('panel.students.partials.active_status' , ['instance' => $this])->render(),
+            'options' => view('panel.students.partials.options' , ['instance' => $this])->render()
         ];
     }
 }

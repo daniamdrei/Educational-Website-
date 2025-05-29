@@ -7,6 +7,7 @@ return [
     'category' => 'Category',
     'lectures'=>'Lectures',
     'students'=>'Students',
+    'subscriptions'=>'Subscriptions',
     'add_new_lecture'=>'add new lecture',
     'title' => 'Title',
     'login_panel' => 'Login to control panel',

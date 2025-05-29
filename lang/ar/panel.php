@@ -7,6 +7,7 @@ return [
     'instructor'=>'المدرس',
     'lectures'=>'المحاضرات',
     'students'=>'الطلاب',
+    'subscriptions'=>'الاشتراكات',
     'add_new_lecture'=>'اضافة محاضرة جديدة',
     'login_panel' => 'تسجيل الدخول إلى لوحة التحكم',
     'home' => 'الرئيسية',
