@@ -1,4 +1,4 @@
-@extends('panel.layouts.master' , ['title' => __('panel.courses')])
+@extends('panel.layouts.master' , ['title' => __('panel.courses') , 'active'=>'courses' ,'sub_active'=>'all'])
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
@@ -97,7 +97,7 @@
                 width: 120,
 
             }
-    
+
         ];
 
     </script>

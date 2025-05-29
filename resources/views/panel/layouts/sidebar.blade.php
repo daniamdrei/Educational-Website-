@@ -166,8 +166,8 @@
                         <span class="menu-text">@lang('panel.overview')</span>
                     </a>
                 </li>
-{{-- admins --}}
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                {{-- admins --}}
+                <li class="menu-item menu-item-submenu {{ @$active == 'admins' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -179,7 +179,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.admins.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -187,7 +187,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.admins.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -199,9 +199,9 @@
                     </div>
                 </li>
 
-{{-- articles --}}
+                {{-- articles --}}
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ @$active == 'articles' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -213,7 +213,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.blogs.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -221,7 +221,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.blogs.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -235,7 +235,7 @@
 
                 {{-- faqs --}}
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ @$active == 'faqs' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -247,7 +247,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.faqs.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -255,7 +255,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.faqs.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -269,7 +269,7 @@
 
                 {{-- courses --}}
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ @$active == 'courses' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -281,7 +281,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.courses.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -289,7 +289,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.courses.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -301,10 +301,9 @@
                     </div>
                 </li>
 
-
                 {{-- students --}}
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ @$active == 'students' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -316,7 +315,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.students.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -324,7 +323,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.students.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -338,7 +337,7 @@
 
                  {{-- subscriptions --}}
 
-                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                <li class="menu-item menu-item-submenu {{ @$active == 'subscriptions' ?"menu-item-open" : '' }}" aria-haspopup="true" data-menu-toggle="hover">
                     <a href="javascript:;" class="menu-link menu-toggle">
 										<span class="svg-icon menu-icon">
 											<!--begin::Svg Icon | path:assets/media/svg/icons/Layout/Layout-4-blocks.svg-->
@@ -350,7 +349,7 @@
                     <div class="menu-submenu">
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'all' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.subscriptions.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
@@ -358,7 +357,7 @@
                                     <span class="menu-text">@lang('constants.all')</span>
                                 </a>
                             </li>
-                            <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item {{ @$sub_active == 'add' ? 'menu-item-active' : ' ' }}" aria-haspopup="true">
                                 <a href="{{ route('panel.subscriptions.create') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>

@@ -1,4 +1,4 @@
-@extends('panel.layouts.master' , ['title' => __('panel.faq')])
+@extends('panel.layouts.master' , ['title' => __('panel.faq') , 'active'=>'faqs' , 'sub_active'=>'all'])
 @section('content')
     <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
 
